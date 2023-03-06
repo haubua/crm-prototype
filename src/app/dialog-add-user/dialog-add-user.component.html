@@ -1,0 +1,28 @@
+<h1 mat-dialog-title>Add new user</h1>
+<div mat-dialog-content>
+    <div>
+        <mat-form-field class="mr-16" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name">
+            <mat-hint>Please enter first name</mat-hint>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name">
+            <mat-hint>Please enter last name</mat-hint>
+        </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Choose a date</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-hint>Please enter birth date</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker  #picker></mat-datepicker>
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button>No Thanks</button>
+    <button mat-button cdkFocusInitial>Ok</button>
+</div>
