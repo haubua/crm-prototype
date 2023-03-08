@@ -25,6 +25,8 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import {MatCardModule} from '@angular/material/card';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import { DialogEditUserComponent } from './dialog-edit-user/dialog-edit-user.component';
 
 
 @NgModule({
@@ -32,7 +34,9 @@ import {MatCardModule} from '@angular/material/card';
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailComponent,
+    DialogEditUserComponent
   ],
   imports: [
     BrowserModule,
