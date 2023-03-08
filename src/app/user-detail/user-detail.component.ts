@@ -14,7 +14,7 @@ export class UserDetailComponent implements OnInit {
   userID = '';
   currentUser: User = new User();
 
-  constructor(private route:ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
+  constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(paramMap => {
@@ -34,7 +34,8 @@ export class UserDetailComponent implements OnInit {
 
 
   editUser() {
-      const dialogRef = this.dialog.open(DialogEditUserComponent)
-    }
-
+    const dialog = this.dialog.open(DialogEditUserComponent);
+    dialog.componentInstance.currentUser = new User(this.currentUser);
+    dialog.componentInstance.userID = this.userID;
+  }
 }

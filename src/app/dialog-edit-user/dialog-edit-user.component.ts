@@ -11,34 +11,22 @@ import { User } from 'src/models/user.class';
 })
 export class DialogEditUserComponent {
   userID = '';
-  currentUser: User = new User();
+  currentUser: User;
   birthDate: Date;
   loading: boolean = false;
 
-  constructor(private route: ActivatedRoute, private firestore: AngularFirestore, public dialogRef: MatDialogRef<DialogEditUserComponent>) { }
+  constructor(public dialogRef: MatDialogRef<DialogEditUserComponent>, private firestore: AngularFirestore) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(paramMap => {
-      this.userID = paramMap.get('id');
-      console.log(this.userID)
-      this.getUser();
-    })
-  }
-
-
-  getUser() {
-    this.firestore.collection('users').doc(this.userID).valueChanges().subscribe((user: any) => {
-      this.currentUser = new User(user);
-      console.log(this.currentUser)
-    })
+    this.birthDate = new Date(this.currentUser.birthDate)
   }
 
   saveUser() {
-    this.currentUser.birthDate = this.birthDate.getTime();
     this.loading = true;
-    this.firestore.collection('users').doc(this.userID).valueChanges(this.currentUser.toJSON())
-    this.loading = false;
-    this.dialogRef.close();
+    this.firestore.collection('users').doc(this.userID).update(this.currentUser.toJSON()).then(() => {
+      this.loading = false;
+      this.dialogRef.close();
+    })
   }
 
 }
