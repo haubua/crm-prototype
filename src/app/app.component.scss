@@ -17,6 +17,10 @@
         height: 55px;
         display: flex;
         align-items: center;
+
+        img {
+            height: 50px;
+        }
     }
 }
 
@@ -50,4 +54,5 @@ mat-toolbar {
 .content-container {
     padding-left: 48px;
     padding-top: 16px;
+    padding-right: 48px;
 }

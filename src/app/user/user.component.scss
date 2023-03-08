@@ -3,3 +3,61 @@
     right: 56px;
     bottom: 56px;
 }
+
+mat-card {
+    width: 50%;
+    min-width: 350px;
+}
+
+.mat-mdc-card-content {
+    padding: 0;
+}
+
+table {
+    width: 100%;
+    // text-align: center;
+    border-collapse: collapse;
+
+
+    th {
+        text-align: start;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+
+        &:first-child {
+            padding-left: 16px;
+        }
+    }
+
+    tr {
+        cursor: pointer;
+
+        &:first-child {
+            user-select: none;
+            cursor: default;
+
+            &:hover {
+                background-color: unset;
+            }
+        }
+
+        &:last-child {
+            td {
+                border-bottom: none;
+            }
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    td {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+        height: 48px;
+
+        &:first-child {
+            padding-left: 16px;
+        }
+
+    }
+}

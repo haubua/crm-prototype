@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "crm-prototype-51fcd": {
+      "hosting": {
+        "crm-prototype": [
+          "crm-prototype-51fcd"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "crm-prototype-51fcd"
+  }
+}
